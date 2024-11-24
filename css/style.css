@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: 1fr 2fr 2r 2fr 1fr;
+    grid-template-areas: 
+    "header header header"
+    "main main main"
+    "main main main"
+    "days days days"
+    "footer footer footer";
+}
+
+header, .main, .cards, footer {
+    border: 1px solid white;
+}
+
+header {
+    grid-area: header;
+}
+
+.main {
+    grid-area: main
+}
+
+.cards {
+    grid-area: days;
+}
+
+footer {
+    
+    grid-area: footer;
+}
+
+
+.weather__data {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+   font-size: 24px;
+    
+}
+
+.weather__data > p {
+    margin-top: 12px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 44px;
+}
+
+.night {
+    background: #0C1445;
+}
+
+.daytime {
+    background: yellow;
+}
+
+h1 {
+    font-size: 84px;
+    color: #E5E5E5;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: center;
+    /* gap: 14px; */
+}
+
+label {
+    color: #E5E5E5;
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+p {
+    color: #E5E5E5;
+}
