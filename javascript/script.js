@@ -25,7 +25,6 @@ async function displayInfo() {
         }
 
         
-
         mainP.innerText = "Condition: " + weather.currentConditions.conditions
 
     });
