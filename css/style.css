@@ -53,6 +53,11 @@ footer {
     margin-top: 12px;
 }
 
+.container__regular {
+    background: black;
+    
+}
+
 header {
     display: flex;
     flex-direction: column;
@@ -66,7 +71,8 @@ header {
 }
 
 .daytime {
-    background: yellow;
+    background: #87CEEB;
+    color: #333333;
 }
 
 h1 {

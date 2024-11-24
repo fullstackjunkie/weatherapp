@@ -6,22 +6,35 @@ async function getWeather(location) {
 
 async function displayInfo() {
     
-    let weather = await getWeather(32024);
+    let area = document.querySelector("#area");
+    let areaBtn = document.querySelector("#area__button");
     let container = document.querySelector(".container");
-    let mainP = document.querySelector("#main__P");
-    if(weather.currentConditions.datetime > '18:00' && weather.currentConditions.datetime <= '6:00') {
-        container.classList.remove("daytime");
-        container.classList.add("night");
-    } else {
-        container.classList.remove("night");
-        container.classList.add("daytime");
-    }
+
+    container.classList.add("container__regular");
+    areaBtn.addEventListener("click", async (e) => {
+        e.preventDefault();
+        let weather = await getWeather(area.value);
+        
+        let mainP = document.querySelector("#main__P");
+        if(weather.currentConditions.datetime > '18:00' && weather.currentConditions.datetime <= '6:00') {
+            container.classList.remove("daytime");
+            container.classList.add("night");
+        } else {
+            container.classList.remove("night");
+            container.classList.add("daytime");
+        }
+
+        
+
+        mainP.innerText = "Condition: " + weather.currentConditions.conditions
+
+    });
 
 
     // mainImg.src = weather.currentConditions.icon;
-    mainP.innerText = "Condition: " + weather.currentConditions.conditions
-    
-    console.log(weather);
+       
+        
+        // console.log(weather);
 }
 
 
